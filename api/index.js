@@ -29,14 +29,11 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-
-// Routes
 app.use("/api/quiz", quizRoutes);
 
-// Health check
 app.get("/", (req, res) => {
   res.status(200).json({ message: "Backend is live 🚀" });
 });
 
-// ✅ REQUIRED for Vercel
 export default app;
+
